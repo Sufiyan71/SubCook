@@ -11,7 +11,8 @@ translated_output_*
 translated_output1_*
 # Ignore PyTorch/YOLO weights
 *.pt
-
+translated_output.txt
+translated_output1.txt
 # Ignore hidden folders (like .whisper)
 .whisper/
 
