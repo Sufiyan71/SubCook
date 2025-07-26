@@ -2,24 +2,24 @@ import whisper
 import time
 import os
 
-# Path to your video file
-input_file = r"F:\Videos\audio1.wav"
+# Path to your video/audio file
+input_file = r"your_video_file.mp4"  # Replace with your actual video file path(mp4, mp3, wav, etc.)
 
 # Load Whisper model (you can use 'base', 'small', 'medium', or 'large')
 print("Loading model...")
-model = whisper.load_model("medium")
+model = whisper.load_model("medium") 
 
 # Start timing
 start_time = time.time()
 
-# Transcribe + translate Korean to English
+# Transcribe + translate your_language to English
 print("Transcribing and translating...")
 result = model.transcribe(
     input_file,
     task="translate",
-    language="Korean",  # You can use "ko" as well
+    language="your_language",  #enter the language in which the video/audio is 
     verbose=True,
-    fp16=False  # Force CPU precision mode to avoid FP16 warnings
+    fp16=False  
 )
 
 # Save the full translation text
@@ -45,8 +45,6 @@ def write_srt(segments, output_path):
 srt_output_path = "translated_output1.srt"
 write_srt(result["segments"], srt_output_path)
 
-# Final print
-print("\n✅ Translation complete!")
-print(f"⤷ Text output saved to: {os.path.abspath(text_output_path)}")
-print(f"⤷ Subtitles saved to:   {os.path.abspath(srt_output_path)}")
-print(f"⏱️ Total time: {round(time.time() - start_time, 2)} seconds")
+print(f" Text output saved to: {os.path.abspath(text_output_path)}")
+print(f"saved to:   {os.path.abspath(srt_output_path)}")
+print(f"Total time: {round(time.time() - start_time, 2)} seconds")
