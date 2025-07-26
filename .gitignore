@@ -1,0 +1,21 @@
+# Ignore video/audio files
+*.mp4
+*.wav
+*.mkv
+*.mp3
+*.m4a
+
+# Ignore subtitle/output text files
+*.srt
+translated_output_*
+translated_output1_*
+# Ignore PyTorch/YOLO weights
+*.pt
+
+# Ignore hidden folders (like .whisper)
+.whisper/
+
+# Ignore logs, OS files
+*.log
+.DS_Store
+Thumbs.db
